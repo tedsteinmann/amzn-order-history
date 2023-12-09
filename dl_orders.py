@@ -209,7 +209,7 @@ def getAmazonOrders():
     # Scrape local invoice pages into order and item csv files
     if scrapeInvoicePages:
 
-        orderFields = ['orderNumber','orderPlacedDate','orderTotal','orderSubtotal','orderShippingAndHandling','orderTotalPreTax','orderTax','orderGrandTotal','paymentMethod','creditCard','creditCardChargeDate']
+        orderFields = ['orderNumber','orderPlacedDate','orderTotal','orderSubtotal','orderShippingAndHandling','orderTotalPreTax','orderTax','orderGrandTotal','paymentMethod','creditCard']#,'creditCardChargeDate']
         itemFields = ['orderNumber','itemQuantity','itemDescription','itemSeller','itemCondition','itemPrice']
 
         with open('orders.csv', 'w', newline='', encoding="utf-8") as ordersFile:
@@ -267,10 +267,10 @@ def getAmazonOrders():
                 # TODO - handle paymentMethods
                 paymentMethod = page.body.find(string=re.compile('Payment Method:')).next_element.next_element.next_element.strip()
                 creditCard = page.body.find(string=re.compile('ending in')).split(':')[0].strip()
-                creditCardChargeDate = page.body.find(string=re.compile('ending in')).split(':')[1].strip()
+                #creditCardChargeDate = page.body.find(string=re.compile('ending in')).split(':')[1].strip()
             orderRow = {'orderNumber':orderNumber, 'orderPlacedDate':orderPlacedDate, 'orderTotal':orderTotal, 'orderSubtotal':orderSubtotal, \
                         'orderShippingAndHandling':orderShippingAndHandling, 'orderTotalPreTax':orderTotalPreTax, 'orderTax':orderTax, 'orderGrandTotal':orderGrandTotal, \
-                        'paymentMethod':paymentMethod,'creditCard':creditCard, 'creditCardChargeDate':creditCardChargeDate}
+                        'paymentMethod':paymentMethod,'creditCard':creditCard}#, 'creditCardChargeDate':creditCardChargeDate}
 
             with open('orders.csv', 'a', newline='', encoding="utf-8") as ordersFile:
                 writer = csv.DictWriter(ordersFile, orderFields)
