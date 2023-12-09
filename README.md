@@ -20,6 +20,8 @@ Activate
 Install Requirements
 `pip install -r requirements.txt`
 
+### Download your order history
+
 Update primary variables
 ```
 browserProfile='Default2'
@@ -32,3 +34,9 @@ scrapeInvoicePages = False
 verbose = False
 ```
 Note that downloadInvoicePages is necessary for writing orders to csv in "scrapeInvoicePages" which takes place locally
+
+Run the download:
+`python3 dl_orders.py`
+
+### Text mine the results
+`python3 textmine.py`
