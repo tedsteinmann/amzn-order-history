@@ -9,7 +9,7 @@ import re
 accountName='personal'
 
 # Add your custom stop words
-custom_stop_words = ['pack', 'fl', 'oz','ct','free', 'natural','naturally', 'company', 'replacement','count','adult','bag']
+custom_stop_words = ['pack', 'fl', 'oz','ct','count','free','large','variety','natural','naturally', 'company', 'replacement','adult','bag']
 # Define a set of color names to exclude
 color_words = {'red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'magenta', 'tan', 'cyan', 'olive', 'maroon', 'navy', 'aquamarine', 'turquoise', 'silver', 'lime', 'teal', 'indigo', 'violet', 'pink', 'black', 'white', 'gray', 'grey'}
 
@@ -17,6 +17,11 @@ color_words = {'red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'm
 word_mapping = {
     'vitamin': 'supplement',
     'vitamins': 'supplement',
+    'cat': 'pets',
+    'litter': 'pets',
+    'dog': 'pets',
+    'girls': 'kids',
+    'boys': 'kids'
     # Add more words as needed
 }
 
