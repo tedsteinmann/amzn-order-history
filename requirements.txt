@@ -2,3 +2,4 @@ beautifulsoup4
 webdriver-manager
 selenium
 pandas
+nltk
