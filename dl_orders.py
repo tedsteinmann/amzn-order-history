@@ -13,12 +13,12 @@
 #
 
 browserProfile='Default2'
-accountName='account3'
+accountName='personal'
 latestYear = 2023
-oldestYear = 2000
-crawlOrderHistory = True
-downloadInvoicePages = True
-scrapeInvoicePages = True
+oldestYear = 2022
+crawlOrderHistory = False
+downloadInvoicePages = False
+scrapeInvoicePages = False
 verbose = False
 
 import os
